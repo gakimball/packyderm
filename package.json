@@ -1,0 +1,31 @@
+{
+  "name": "packyderm",
+  "version": "0.0.1",
+  "description": "Consume config files from npm/Bower packages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter nyan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gakimball/packyderm.git"
+  },
+  "keywords": [
+    "config",
+    "packages",
+    "dependencies"
+  ],
+  "author": "Geoff Kimball <geoff@zurb.com> (http://geoffkimball.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gakimball/packyderm/issues"
+  },
+  "homepage": "https://github.com/gakimball/packyderm#readme",
+  "dependencies": {
+    "glob": "^6.0.3",
+    "js-yaml": "^3.4.6"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}
