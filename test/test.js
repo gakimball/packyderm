@@ -1,4 +1,4 @@
-var assert = require('assert');
+var expect = require('chai').expect;
 var packy  = require('..');
 
 describe('Packyderm', function() {
@@ -9,7 +9,7 @@ describe('Packyderm', function() {
 
   it('consumes config files from dependent packages', function(done) {
     packy(['package-a', 'package-b'], 'config.yml', function(err, packages) {
-      assert.equal(Object.keys(packages).length, 2, 'one item for each package found');
+      expect(packages).to.have.all.keys('package-a', 'package-b');
       done();
     });
   });
