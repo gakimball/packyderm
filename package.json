@@ -1,6 +1,6 @@
 {
   "name": "packyderm",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Consume config files from npm/Bower packages.",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "packages",
     "dependencies"
   ],
-  "author": "Geoff Kimball <geoff@zurb.com> (http://geoffkimball.com)",
+  "author": "Geoff Kimball <geoff@geoffkimball.com> (http://geoffkimball.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gakimball/packyderm/issues"

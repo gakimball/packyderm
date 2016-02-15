@@ -2,7 +2,7 @@
 
 A small module that pulls common configuration files from npm or Bower packages, and gives them to you as an object.
 
-Maybe you have a module called Awesome, and it references a config file at the root of your project called `awesome.json`. An Awesome-compatible project may also want to get information from dependant Awesome-compatible projects installed via npm or Bower.
+Maybe you have a module called Awesome, and it references a config file at the root of your project called `awesome.json`. An Awesome-compatible project may also want to get information from dependent Awesome-compatible projects installed via npm or Bower.
 
 ## Installation
 
@@ -22,7 +22,7 @@ var AWESOME_CONFIG = 'awesome.json';
 function findAwesomeLibraries(libraries, cb) {
   var libraries = libraries.concat(['SELF']);
 
-  packyderm(, AWESOME_CONFIG, function(err, configs) {
+  packyderm(libraries, AWESOME_CONFIG, function(err, configs) {
     cb(configs);
   });
 }
