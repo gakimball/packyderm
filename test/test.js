@@ -8,8 +8,8 @@ describe('Packyderm', function() {
   });
 
   it('consumes config files from dependent packages', function(done) {
-    packy(['package-a', 'package-b'], 'config.yml', function(err, packages) {
-      expect(packages).to.have.all.keys('package-a', 'package-b');
+    packy(['SELF', 'package-a', 'package-b'], 'config.yml', function(err, packages) {
+      expect(packages).to.have.all.keys('SELF', 'package-a', 'package-b');
       done();
     });
   });

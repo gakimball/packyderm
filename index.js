@@ -36,6 +36,18 @@ module.exports = function(packages, configFile, cb) {
   packages.map(function(name) {
     var configText;
 
+    // "SELF" is a special package name that is loaded right from the CWD
+    if (name === 'SELF') {
+      try {
+        var fileContents = fs.readFileSync(path.join(process.cwd(), configFile));
+        configList[name] = parser(fileContents);
+        return;
+      }
+      catch(e) {
+        console.log('Packyderm: couldn\'t find a config file in the base project folder.');
+      }
+    }
+
     // Try to load the package from node_modules
     try {
       var fileContents = fs.readFileSync(path.join(process.cwd(), 'node_modules', name, configFile));

@@ -20,7 +20,9 @@ var AWESOME_CONFIG = 'awesome.json';
 
 // Our library's wrapper function
 function findAwesomeLibraries(libraries, cb) {
-  packyderm(libraries, AWESOME_CONFIG, function(err, configs) {
+  var libraries = libraries.concat(['SELF']);
+
+  packyderm(, AWESOME_CONFIG, function(err, configs) {
     cb(configs);
   });
 }
@@ -31,6 +33,7 @@ function findAwesomeLibraries(libraries, cb) {
 Looks for `libraries` inside `node_modules` and `bower_components` inside the current working directory, and pulls in files with the filename `configFile`.
 
 - `libraries` (Array of Strings): names of packages to look for.
+  - You can also add an item called `SELF`, which will look for a config file in the current working directory.
 - `configFile` (String): filename of the config file. Can be `.json` or `.yml`.
 - `cb(err, configs)` (Function): callback to run when processing is done.
-  - `configs` is an object of packages found. Each key is a package name, and the value is the config found.
+  - `configs` is an object of packages found. Each key is a package name (or `SELF`), and the value is the config found.
